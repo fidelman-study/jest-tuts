@@ -7,5 +7,12 @@
     "test": "jest"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^18.1.0",
+    "jest-cli": "^18.1.0"
+  },
+  "jest": {
+  	"testEnvironment": "node"
+  }
 }
