@@ -13,6 +13,6 @@
     "jest-cli": "^18.1.0"
   },
   "jest": {
-  	"testEnvironment": "node"
+    "testEnvironment": "node"
   }
 }
