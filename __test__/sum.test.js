@@ -6,7 +6,7 @@ const myBeverage = {
 };
 
 describe('my beverage', function() {
-	it.only('is delicious', () => {
+	it.skip('is delicious', () => {
 		expect(myBeverage.delicious).toBeTruthy();
 	});
 
