@@ -1,20 +1,16 @@
 const sum = require('../js/sum');
 
+const myBeverage = {
+	delicious: true,
+	sour: false
+};
 
-
-describe('test', function() {
-
-	beforeAll(function() {console.log('Before Test group');});
-	beforeEach(function() {console.log('Before Test');});
-
-	it('1 + 2 to equal 3', () => {
-		afterEach(() => {
-			expect(sum(1,2)).toBe(3)
-		});
+describe('my beverage', function() {
+	it('is delicious', () => {
+		expect(myBeverage.delicious).toBeTruthy();
 	});
 
-	afterEach(function() {console.log('After Test');});
-	afterAll(function() {console.log('after Test group');});
-
-
+	it('is not sour', () => {
+		expect(myBeverage.sour).toBeFalsy();
+	});
 });
