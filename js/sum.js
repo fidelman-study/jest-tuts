@@ -1,5 +1,5 @@
-function sum(a, b) {
-	return a + b;
+function bestLaCroixFlavor() {
+	return 'grapefruit';
 }
 
-module.exports = sum;
+module.exports = bestLaCroixFlavor;
