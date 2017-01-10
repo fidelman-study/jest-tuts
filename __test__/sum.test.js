@@ -1,9 +1,9 @@
-const drinkAll = require('../js/sum.js');
+const sum = require('../js/sum.js');
+console.log(sum(0.2 + 0.1));
 
-describe('Drink all', () => {
-  it('drinks something lemon-flavored', () => {
-  	let drink = jest.fn();
-  	drinkAll(drink, 'lemon');
-    expect(drink).toHaveBeenCalled();
+
+describe('adding numbers', () => {
+  it('works sanely with simple decimals', () => {
+    expect(sum(0.2, 0.1)).toBeCloseTo(0.3, 5);
   });
 });

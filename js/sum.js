@@ -1,6 +1,5 @@
-function drinkAll(fn, flavor) {
-	if(flavor !== 'octopus') fn.call(null, flavor);
-
+function sum(a, b) {
+	return a + b;
 }
 
-module.exports = drinkAll;
+module.exports = sum;
