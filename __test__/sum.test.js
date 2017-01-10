@@ -1,7 +1,9 @@
-const bestLaCroixFlavor = require('../js/sum.js');
+const drinkAll = require('../js/sum.js');
 
-describe('the best La Croix flavor', () => {
-  it('is not coconut', () => {
-    expect(bestLaCroixFlavor()).not.toBe('coconut');
+describe('Drink all', () => {
+  it('drinks something lemon-flavored', () => {
+  	let drink = jest.fn();
+  	drinkAll(drink, 'lemon');
+    expect(drink).toHaveBeenCalled();
   });
 });
