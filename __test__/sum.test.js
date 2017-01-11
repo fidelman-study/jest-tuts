@@ -1,9 +1,5 @@
-const sum = require('../js/sum.js');
+const bloop = require('../js/sum.js');
 
-
-class A {}
-
-
-it('is instance of A', () => {
-	expect(new A).toBeInstanceOf(A);
+it('is null', () => {
+	expect(bloop()).toBeNull();
 });
