@@ -1,5 +1,5 @@
 function bloop() {
-	return null;
+	var x = 1;
 }
 
 module.exports = bloop;
