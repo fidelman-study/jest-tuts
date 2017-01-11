@@ -1,5 +1,5 @@
-function bloop() {
-	var x = 1;
+function myBeverages() {
+	return {food: 'lime'};
 }
 
-module.exports = bloop;
+module.exports = myBeverages;
