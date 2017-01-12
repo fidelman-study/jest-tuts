@@ -3,7 +3,6 @@
 const canArray =  ['grapefruit', 12] ;
 
 
-
-  it('contain item in array', () => {
-    expect(canArray).toContain(12);
+  it('length is 2', () => {
+    expect(canArray).toHaveLength(2);
   });
