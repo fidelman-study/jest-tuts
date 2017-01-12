@@ -1,8 +1,11 @@
+describe('an essay on the best flavor', () => {
+  it('mentions grapefruit', () => {
+    expect('grapefruit').toMatch(/grapefruit/);
+  })
+})
 
-
-const canArray =  ['grapefruit', 12] ;
-
-
-  it('length is 2', () => {
-    expect(canArray).toHaveLength(2);
-  });
+describe('grapefruits are healthy', () => {
+  it('grapefruits are a fruit', () => {
+    expect('grapefruits').toMatch('fruit');
+  })
+})
