@@ -1,23 +1,28 @@
-expect.extend({
-  toBeNumber(received, expected) {
-    const pass = received === expected;
-    const message = () => {
-    	return `${this.utils.matcherHint('toBeNumber')}
-    Expected value:
-      ${this.utils.printExpected(expected)} (${this.utils.getType(expected)})
-    Received:
-      ${this.utils.printReceived(received)} (${this.utils.getType(received)})`;
-    }
-    return {message, pass};
-  }
+
+it('Asymmetric object test', () => {
+expect({
+    age: 23,
+    name: 'Andrei Fidelman',
+    position: 'Front-End',
+    adress: {
+    	street: 'Libicka',
+    	house: '10'
+    },
+    skills: ['JS', 'CSS', 'HTML']
+  }).toEqual({
+  	// describe all properties
+    age: expect.any(Number),
+    name: expect.stringMatching('Andrei'),
+    position: expect.anything(),
+    adress: expect.objectContaining({
+    	street: 'Libicka'
+    }),
+    skills: expect.arrayContaining(['JS'])
+  });
 });
 
-describe('toBe5', () => {
-  it('matches the number 5', () => {
-    expect(5).toBeNumber(1);
-  });
-
-  it('not matches the number 5', () => {
-	expect('Jest').not.toBeNumber(5);
-  });
-});
+// expect.anything() - matches everything, except null and undefined
+// expect.any(<constructor>) - checks, that actual value is instance of provided <constructor>.
+// expect.objectContaining(<object>) - compares only keys, that exist in provided object. All other keys of actual value will be ignored.
+// expect.arrayContaining(<array>) - checks that all items from the provided array are exist in actual value. It allows to have more values in actual.
+// expect.stringMatching(<string|Regexp>) - checks that actual value has matches of provided expectation.
