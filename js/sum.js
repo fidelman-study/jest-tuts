@@ -1,5 +1,7 @@
-function myBeverages() {
-	return {food: 'lime'};
+function drinkFlavor(flavor) {
+  if (flavor == 'octopus') {
+    throw new DisgustingFlavorError('yuck, octopus flavor');
+  }
 }
 
-module.exports = myBeverages;
+module.exports = drinkFlavor;

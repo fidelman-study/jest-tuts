@@ -1,22 +1,23 @@
-const houseForSale = {
-    bath: true,
-    kitchen: {
-        amenities: ['oven', 'stove', 'washer'],
-        area: 20,
-        wallColor: 'white'
-    },
-  bedrooms: 4
-};
-const desiredHouse = {
-    bath: true,
-    kitchen: {
-        amenities: ['oven', 'stove', 'washer'],
-        wallColor: 'white'
+expect.extend({
+  toBeNumber(received, expected) {
+    const pass = received === expected;
+    const message = () => {
+    	return `${this.utils.matcherHint('toBeNumber')}
+    Expected value:
+      ${this.utils.printExpected(expected)} (${this.utils.getType(expected)})
+    Received:
+      ${this.utils.printReceived(received)} (${this.utils.getType(received)})`;
     }
-};
+    return {message, pass};
+  }
+});
 
-describe('looking for a new house', () => {
-    it('the house has my desired features', () => {
-        expect(houseForSale).toMatchObject(desiredHouse);
-    });
+describe('toBe5', () => {
+  it('matches the number 5', () => {
+    expect(5).toBeNumber(1);
+  });
+
+  it('not matches the number 5', () => {
+	expect('Jest').not.toBeNumber(5);
+  });
 });
